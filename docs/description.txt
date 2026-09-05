@@ -1,0 +1,27 @@
+
+HAboard-- Harinandan & Aryan
+
+Design Description
+
+The objective of this project is to design a basic STM32F401RET6 development board that can be used for programming, debugging, and testing embedded applications.
+
+Design Decisions
+
+The STM32F401RET6 was selected because it provides an ARM Cortex-M4 core with sufficient GPIOs and peripheral interfaces while remaining relatively simple to integrate into a custom PCB design.
+
+The board is powered through a USB Type-C connector. Since the microcontroller operates at 3.3 V, an AP2112K-3.3 voltage regulator is used to convert the USB 5 V supply to a regulated 3.3 V rail for the MCU and onboard peripherals.
+
+For firmware programming and debugging, a standard SWD interface has been implemented using the SWDIO, SWCLK, and NRST signals. The BOOT0 pin is pulled low through a resistor to ensure that the microcontroller boots from internal Flash memory under normal operation.
+
+Basic user interaction is provided through an onboard LED connected to PA5 and a pushbutton connected to PA6. These components can be used for GPIO testing and simple firmware demonstrations.
+
+Power supply decoupling has been incorporated according to STM32F401 design recommendations. Multiple decoupling capacitors are connected to the MCU power pins, and a dedicated VCAP capacitor is included as required by the STM32F401RET6.
+
+Current Progress...
+Schematic design completed
+Footprints assigned and verified
+PCB layout initiated
+Preliminary component placement completed
+Power section routing completed
+Decoupling capacitor placement and final routing to be optimized during PCB layout refinement
+Final DRC verification pending
